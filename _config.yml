@@ -1,0 +1,81 @@
+source:      ./_source
+destination: ./_deploy
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     []
+keep_files:  ['.git','.svn']
+#need the full path from root gems: [./_plugins/page_collections]
+
+markdown: kramdown # advice from GithUb ?
+
+#TimeZone as in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:  Europe/Paris
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+#old : permalink: /:year/:month/:day/:title.html
+permalink:   /:categories/:title/
+
+
+# Build settings
+highlighter: rouge # stt pygments|rouge|null must be set else default pygment applies to posts
+
+#
+url:   http://localhost:4000
+title: Collaborons
+brandName: Collaborons
+supplyerName: ONLYOFFICE™
+email: collaborons.fr@gmail.com
+phone: +33 6 11 70 52 95
+logo: WW-logo_et_texte.png
+addthiskey: "547dad0840bd40a1"
+
+# Owner/author information
+owner:
+  name:           Your Name
+  avatar:         bio-photo.jpg
+  email:          you@email.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: 	https://twitter.com/fr_collab
+  facebook:
+  github:
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
+adress:
+  facebook: http://mysite.com
+  twitter: http://mysite.com
+  pinterest: http://mysite.com
+  rss: http://mysite.com
+
+social-twitter:
+  user: stephane.torchy
+
+page_collections:
+- projects:
+    permalink: /:title/
+- articles:
+    permalink: /:title/
+- miscellaneous:
+    source: _misc
+    permalink: pretty
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+
+stt:
+  facebook: test
+  twitter: tt
+  linkedin: "https://www.linkedin.com/pub/stephane-torchy/2/863/369"
+  google+: "https://plus.google.com/+stephanetorchy/about"
+

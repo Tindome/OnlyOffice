@@ -1,0 +1,237 @@
+---
+layout: default
+title: "Téléchargement de documents"
+---
+
+
+<style>
+#elements{
+  overflow: hidden;
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0;
+  padding: 0;
+}
+
+#ld li {
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: none; /** Hide items initially to avoid a flicker effect **/
+  cursor: pointer;
+  padding: 4px;
+}
+
+#dl li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#dl li img {
+  display: block;
+}
+
+/**
+ * Grid items animation
+ */
+#dl li {
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+/**
+ * Filters
+ */
+#filters {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 5% 0 5%;
+}
+
+#filters li {
+  font-size: 12px;
+  float: left;
+  padding: 6px 0 4px 0;
+  cursor: pointer;
+  margin: 0 1% 0 1%;
+  width: 8%;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+#filters li:hover {
+  background: #4281f5;
+  color: #ffffff;
+}
+
+#filters li.active {
+  background: #4281f5;
+  color: #ffffff;
+}
+
+  .portfolio {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+  }
+  .portfolio li img {
+    display: block;
+    border: 1px solid #fff;
+  }
+  .portfolio li {
+    display: block;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    width : 272px;
+    height:  351px
+  }
+  .portfolio li .overlay {
+    display: block;
+    width: 258px;
+    height: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.8);
+    padding: 3%;
+    margin-left: 1px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  .portfolio li:hover .overlay { height: 96%;opacity: 1;}
+
+  .portfolio li .overlay h4 {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .portfolio li .overlay h5 {
+    font-size: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ccc;
+  }
+
+</style>
+
+<script type="text/javascript">
+//freetile est non fonctionnel avec le plugin mixup, tout comme masonry
+
+
+
+function cookieUp(){
+
+}
+
+function wookmarkUp(){
+  // $('#elements').freetile(); non fonctionnel avec le plugin mixup, tout comme masonry
+        // Get a reference to your grid items.
+        var handler = $('#dl li'),  filters = $('#filters li');
+
+      // Call the layout function.
+      handler.wookmark({
+        autoResize: true, // This will auto-update the layout when the browser window is resized.
+        container: $('#dl'), // Optional, used for some extra CSS styling
+        offset: 2, // Optional, the distance between grid items
+        itemWidth: 310 // Optional, the width of a grid item
+      });
+
+
+        /**
+         * When a filter is clicked, toggle it's active state and refresh.
+         */
+        function onClickFilter(e) {
+          var $item = $(e.currentTarget),
+              activeFilters = [],
+              filterType = $item.data('filter');
+
+          if (filterType === 'all') {
+            filters.removeClass('active');
+          } else {
+            $item.toggleClass('active');
+
+            // Collect active filter strings
+            filters.filter('.active').each(function() {
+              activeFilters.push($(this).data('filter'));
+            });
+          }
+
+          handler.wookmarkInstance.filter(activeFilters, 'or');
+        }
+
+        // Capture filter click events.
+        $('#filters').on('click.wookmark-filter', 'li', onClickFilter);
+
+
+
+}
+
+yepnope([{
+    test : $.wookmark ,
+    nope : ['{{baseurl}}/assets/vendor/wookmark/js/jquery.wookmark.min.js'],
+    complete : function() {  wookmarkUp(); }
+  }
+])
+
+
+yepnope.injectJs("{{baseurl}}/assets/js/jquery.easing.1.3.js", {},{charset: "utf-8"},5000);
+yepnope.injectJs("{{baseurl}}/assets/vendor/jquery.cookie/js/jquery.cookie.js", cookieUp,{charset: "utf-8"},5000);
+
+
+</script>
+
+
+
+<section class="container page-content" >
+  <div class="sixteen columns">
+    <label>Filtrer</label>
+    <ol id="filters">
+      <li data-filter="all">Tout voir</li>
+      <li  data-filter="serviceonline">Serviceonline</li>
+      <li  data-filter="ebook">Ebook</li>
+      <li  data-filter="product">Produits</li>
+    </ol>
+  </div>
+
+   <div class="clr"></div><br />
+
+  <div id="elements" class="sixteen columns">
+    <ul id="dl" class="portfolio">
+    {% for doc in site.data.telechargement %}
+      <li class="portfolio mix {{ doc.cat }}" data-filter-class='["{{ doc.cat }}"]'>
+        <a href="{{ doc.href }}">
+        <img src="{{ doc.thumb }}" />
+        <div class="overlay">
+          <h4>{{ doc.title }}</h4>
+          <h5>{{ doc.cat }}</h5>
+          <p>{{ doc.desc }}</p>
+          <h6>Téléchargement</h6>
+        </div>
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="clr"></div><br />
+
+</section>
+

@@ -1,0 +1,202 @@
+---
+---
+// Jekyll needs these triple dashes
+// to recognize files it has to process
+
+
+
+$brand-primary: #591F00;
+$brand-secondary: #BF7C51;
+
+
+.blue{background-color: #00ADEF;}
+.color1 {background-color: $brand-primary; color: #fff;}
+
+
+
+body{
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+/*********************
+Diminuer le container de la zone du menu
+*/
+.reservemenuspace {padding: 60px 0;}
+
+/*********************
+Diminuer le container de la zone du menu
+*/
+
+.section {
+padding: 60px 0;
+}
+
+.section-header {
+text-align: center;
+padding-bottom: 75px;
+}
+
+.section-blue {
+    background: #FFF;
+}
+
+.section-white {
+    background: #00ADEF;
+}
+
+#marketing-tryout{
+    background-color: $brand-secondary;
+    color: $brand-primary;
+    .btn {
+        margin-top: .3em;
+    }
+}
+
+.container > h2 {border-bottom: 2px solid black;}
+
+.service-wrapper {
+background: #FFF;
+margin: 20px 10px;
+text-align: center;
+padding: 30px 20px;
+-webkit-border-radius: 5px;
+-webkit-background-clip: padding-box;
+-moz-border-radius: 5px;
+-moz-background-clip: padding;
+border-radius: 5px;
+background-clip: padding-box;
+-webkit-box-shadow: 0 0 3px #999;
+-moz-box-shadow: 0 0 3px #999;
+box-shadow: 0 0 3px #999;
+color: 0 0 3px #999;
+}
+
+.service-wrapper h3 {
+font-size: 1.2em;
+margin: 10px 0 !important;
+}
+
+
+
+.bigslogan {
+color: #3d4a6b;
+font-size: 47px;
+font-weight: 500;
+line-height: 1.2em;
+text-shadow: 1px 1px 1px #fff;
+}
+
+
+/*******************************
+Haut de page
+*/
+
+#headerwrap {
+background: url('http://static.tumblr.com/m7jbopv/vA7mwwpdq/tumblr_mtag5zve3g1st5lhmo1_1280.jpg') no-repeat center top;
+margin-top: -10px;
+padding-top: 20px;
+text-align: center;
+background-attachment: relative;
+background-position: center center;
+min-height: 750px;
+width: 100%;
+-webkit-background-size: 100%;
+-moz-background-size: 100%;
+-o-background-size: 100%;
+background-size: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+
+/*******************************
+Pied de Page
+*/
+
+
+.footer {
+background: #222;
+color: #A0A0A0;
+padding: 0 20px 10px 20px;
+border-top: 4px solid #4f8db3;
+margin-top: 20px;
+-webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+-moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+color: 0 -1px 12px rgba(0,0,0,0.4);
+}
+
+#toTop {
+display: none;
+text-decoration: none;
+position: fixed;
+bottom: 10px;
+right: 10px;
+overflow: hidden;
+width: 64px;
+height: 64px;
+border: none;
+text-indent: 100%;
+max-width:            64px;
+max-height:           64px;
+background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAArCAYAAADIWo5HAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAEGgAABBoBC0NBTQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAITSURBVGje7Zq9agJBEMdP0M5CsLO2srC18Qv1tJS0eQDBVxDBNn4WoulSpLFImQewSS34AIG0qfOlKcLlv7AHIt45u563a7IDPwTZmdn5e6y7s2c5jmP9ZywjgBEgpESWlQTXoAvuwBK8cJb8uy4fk/wzAsBy4B5sgENkw31yFysArAlWAkV7wWI0L0YAWBSMAyh8HxYzqrUAsBR4OkPxLix2SksBYFnwesbiXViOrFYCwBLgOYTiXViuhBYCwCLgMcTiXVjOiA4CdCQL2IJbzlYyRkepALAM+JGYOPufb+zEaQjuE1xY7oxKAWaSxdcPxKpLijBTIgAsDt4EJ/sFbJ+YNh8jEpPNIa5CgLZE8TVC3JqECG0VAqwFi68KxK4KirAOVQBYTGDx+wQViRwV7ktdDGNhCpAWKL58wlNWFhAhHaYANmFCH6AUwD6jxGMdy2eHKUCLUHyREOeGQRhXJIjQClOAns9E3kGBEKO/49MnjC/w2F55ezo8Ad8gT/AfHPAdEPzyPIfyJ8BrDVgQfIc+v+KQ4L/QYQ1I+7SvIj5+I8JiNjpy8lzp8C/gtw+Ye/iItMnGHjHmWuwDCDvB6d7YicQhZ7IXY6rNTpB4FngAV/xTtulBjdG+lNPgOVBzGjyhHxA0s0vsCAWF2o7QiT3BIOiYrrC5FzA3Q+Zu0NwOm/cDzBsi5h0h85aYEcAIIMUveAkuP7CAs74AAAAASUVORK5CYII0246013c57a33e943da1af06e590af57') no-repeat right top;
+}
+
+/************************
+*/
+
+
+
+.content-feature-grids {
+border-bottom: 1px solid #eee;
+padding: 8% 0 5%;
+    h3 {
+        color: #3D3D3D;
+        font-size: 2.5em;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+    }
+    p {
+        color: #3D3D3D;
+        font-size: 1.2em;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        margin: 0 0 6%;
+        font-weight: 300;
+        }
+}
+.feature-grid {
+float: left;
+margin-bottom: 5%;
+}
+
+.feature-grid-left {
+width: 13%;
+float: left;
+margin-top: 0.3em;
+}
+.feature-grid-right {
+width: 84%;
+float: right;
+}
+
+.icon1 span {
+background: url(../images/icons.png) no-repeat -6px 0px;
+}
+
+div.feature-grid-right p {
+text-align: left;
+font-size: 1em;
+font-weight: 300;
+}

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Vidéos
+---
+
+
+
+<script type="text/javascript">
+
+yepnope.injectJs("{{baseurl}}/assets/vendor/youmax-2.0/js/youmax.min.js", function () {},{charset: "utf-8"},5000);
+
+var youTubeChannelURL = "http://www.youtube.com/user/PPm-cAkT3BsBnm3vEd6H9w";
+var youTubeChannelURL = "https://www.youtube.com/channel/UCHUFXAfBRQjvl8pOLSGC7QA/feed";
+//var youTubeChannelURL = "https://www.youtube.com/channel/UCPPm-cAkT3BsBnm3vEd6H9w";
+// probleme : le premier lien nous permet bien de récuperer le user, par contre il nous permet pas de cliquer sur le lien d'abonnement
+
+//optional parameters-----------------------------------------------
+var youTubePlaylistURL = "http://www.youtube.com/playlist?list=PLJU2aIQE9SN-k9cpVx7pTZfsmyNvJ31Gk";
+// la gestion du stockage PLJU2aIQE9SN-k9cpVx7pTZfsmyNvJ31Gk
+var youmaxDefaultTab = "featured";
+var youmaxColumns = 3;
+var youmaxWidgetWidth = 900;
+//var youmaxWidgetHeight = 1000;
+var showFeaturedVideoOnLoad = false;
+var showVideoInLightbox = true;
+
+
+function goClicked() {
+    $('#youmax').empty().append(' loading ...');
+    youTubeChannelURL=$('#youTubeChannelUrl').val();
+    youTubePlaylistURL=$('#youTubePlaylistUrl').val();
+    youmaxFeaturedPlaylistId = null;
+    prepareYoumax();
+}
+
+</script>
+
+
+<style>
+
+
+
+  #youmax{width:100% !important;}
+
+
+</style>
+<section id="headline2">
+    <div class="container">
+        <h1>Vidéos</h1>
+    </div>
+</section>
+
+<section class="container page-content" >
+
+    <div id="youmax"></div>
+
+</div>
+
+

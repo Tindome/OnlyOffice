@@ -1,0 +1,159 @@
+---
+layout: default
+title: index
+contact: false
+---
+
+<style>
+.dark-text {
+color: #404040;
+}
+h2 {
+font-size: 45px !important;
+line-height: 55px;
+}
+
+h6.team {color:#8B8B8B; font-size: 14px;}
+
+/****** team ***/
+.our-team {
+padding-bottom: 66px;
+padding-top: 100px;
+background: #FFFFFF;
+text-align: center;
+}
+
+.team-member {
+border-radius: 4px;
+overflow: hidden;
+position: relative;
+margin-bottom: 35px;
+}
+.team-member .profile-pic {
+border-radius: 50%;
+width: 174px;
+height: 174px;
+margin: auto;
+overflow: hidden;
+margin-bottom: 25px;
+}
+.team-member .profile-pic img {
+width: 100%;
+height: 100%;
+}
+.team-member .member-details {
+position: relative;
+display: inline-block;
+padding-bottom: 5px;
+}
+.team-member .social-icons {
+margin-bottom: 25px;
+}
+.team-member .details {
+text-align: left;
+font-size: 13px;
+line-height: 20px;
+position: absolute;
+padding: 15px;
+top: -200px;
+left: 0;
+width: 100%;
+height: 190px;
+-webkit-transition: all 1500ms;
+transition: all 1500ms;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: alpha(opacity=0);
+opacity: 0;
+}
+.team-member h5 {
+text-transform: uppercase;
+color: #404040;
+font-weight: 700;
+position: relative;
+}
+.red-border-bottom:before {
+position: absolute;
+margin: auto;
+z-index: 1;
+content: "";
+width: 75%;
+height: 2px;
+background: #e96656;
+bottom: -9px;
+left: 12.5%;
+}
+ul, ol {
+padding-left: 0 !important;
+}
+.team-member .social-icons ul li {
+display: inline-block;
+line-height: 32px;
+margin: 6px;
+}
+.team-member .social-icons ul li a {
+background: #FFF;
+font-size: 18px;
+border-radius: 50%;
+color: #808080;
+}
+</style>
+
+<section class="our-story reservemenuspace" id="story">
+    <div class="container">
+        <div class="section-header wow animated fadeInUp animated" style="visibility: visible;">
+        <!-- SECTION TITLE -->
+            <h2 class="dark-text">Notre Histoire</h2>
+        <!-- SHORT DESCRIPTION ABOUT THE SECTION -->
+            <h6 class="story">
+                Pourquoi avoir choisi cet outil pour travailler.
+            </h6>
+        </div>
+        <div class="row">
+            aaaaaaaaaaaaaaaaa
+        </div>
+    </div>
+</section>
+
+<section class="our-team" id="team">
+    <div class="container">
+        <div class="section-header wow animated fadeInUp animated" style="visibility: visible;">
+        <!-- SECTION TITLE -->
+            <h2 class="dark-text">Notre équipe</h2>
+        <!-- SHORT DESCRIPTION ABOUT THE SECTION -->
+            <h6 class="team">
+                Retrouvez ici tous les éléments de notre équipe qui chercherons à mettre leur savoir faire et leur savoir être au service de votre besoin.
+            </h6>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-3">
+                <div class="team-member">
+                    <figure class="profile-pic">
+                    <img src="/assets/img/team/pic1.png" alt=""> <!-- MEMBER PROFILE PIC -->
+                    </figure>
+                    <div class="member-details">
+                        <h5 class="dark-text red-border-bottom">Stéphane TORCHY</h5>
+                        <div class="position">
+                            Fondateur
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="{{site.stt.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{site.stt.twitter}}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{site.stt.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{site.stt.google+}}"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%include contactez_nous.html %}

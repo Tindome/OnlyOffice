@@ -1,0 +1,16 @@
+Encoding
+
+If you use UTF-8 encoding, make sure that no BOM header characters exist in your files or very, very bad things will happen to Jekyll. This is especially relevant if you’re running Jekyll on Windows.
+
+Additionally, you might need to change the code page of the console window to UTF-8 in case you get a “Liquid Exception: Incompatible character encoding” error during the site generation process. It can be done with the following command:
+
+$ chcp 65001
+Auto-regeneration
+
+As of v1.3.0, Jekyll uses the listen gem to watch for changes when the --watch switch is specified during a build or serve. While listen has built-in support for UNIX systems, it requires an extra gem for compatibility with Windows. Add the following to the Gemfile for your site:
+
+require 'rbconfig'
+gem 'wdm', '~> 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
+
+intéressant
+on est pas obligé de créer un plugin sitemap, un bon fichier xml a la racine avec les bons code sera interpreté par jekyll
